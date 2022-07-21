@@ -11,41 +11,47 @@ import './styles/styles.css';
 let ctToastCount = 0;
 
 const cogoToast: CToast = (text, options?) => {
-	let rootContainer = document.getElementById(options?.toastContainerID || 'ct-container');
+  let rootContainer = document.getElementById(
+    options?.toastContainerID || 'ct-container',
+  );
 
-	if (!rootContainer) {
-		rootContainer = document.createElement('div');
-		rootContainer.id = 'ct-container';
-		document.body.appendChild(rootContainer);
-	}
+  if (!rootContainer) {
+    rootContainer = document.createElement('div');
+    rootContainer.id = 'ct-container';
+    document.body.appendChild(rootContainer);
+  }
 
-	ctToastCount += 1;
+  ctToastCount += 1;
 
-	const hideTime = (options?.hideAfter === undefined ? 3 : options.hideAfter) * 1000;
-	const toast = { id: ctToastCount, text, ...options };
+  const hideTime =
+    (options?.hideAfter === undefined ? 3 : options.hideAfter) * 1000;
+  const toast = { id: ctToastCount, text, ...options };
 
-	ReactDOM.render(<ToastContainer toast={toast} />, rootContainer);
+  ReactDOM.render(<ToastContainer toast={toast} />, rootContainer);
 
-	const hide = () => {
-		ReactDOM.render(<ToastContainer hiddenID={toast.id} />, rootContainer);
-	};
+  const hide = (): void => {
+    ReactDOM.render(<ToastContainer hiddenID={toast.id} />, rootContainer);
+  };
 
-	const completePromise: CTReturn = new Promise<void>((resolve) => {
-		setTimeout(() => {
-			resolve();
-		}, hideTime);
-	});
+  const completePromise: CTReturn = new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, hideTime);
+  });
 
-	completePromise.hide = hide;
+  completePromise.hide = hide;
 
-	return completePromise;
+  return completePromise;
 };
 
-cogoToast.success = (t, o) => cogoToast(t, { ...o, type: 'success' });
-cogoToast.warn = (t, o) => cogoToast(t, { ...o, type: 'warn' });
-cogoToast.info = (t, o) => cogoToast(t, { ...o, type: 'info' });
-cogoToast.error = (t, o) => cogoToast(t, { ...o, type: 'error' });
-cogoToast.loading = (t, o) => cogoToast(t, { ...o, type: 'loading' });
+cogoToast.success = (t, o): Promise<void> =>
+  cogoToast(t, { ...o, type: 'success' });
+cogoToast.warn = (t, o): Promise<void> => cogoToast(t, { ...o, type: 'warn' });
+cogoToast.info = (t, o): Promise<void> => cogoToast(t, { ...o, type: 'info' });
+cogoToast.error = (t, o): Promise<void> =>
+  cogoToast(t, { ...o, type: 'error' });
+cogoToast.loading = (t, o): Promise<void> =>
+  cogoToast(t, { ...o, type: 'loading' });
 
 export { Toast };
 

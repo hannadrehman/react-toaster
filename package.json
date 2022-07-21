@@ -1,117 +1,124 @@
 {
-	"name": "cogo-toast",
-	"description": "Beautiful, Zero Configuration, Toast Messages - Built with React",
-	"version": "4.2.4",
-	"license": "MIT",
-	"scripts": {
-		"setup": "yarn install && cd docs && yarn install",
-		"add-contributor": "all-contributors add",
-		"dev-npm": "rollup -c -w",
-		"dev-docs": "cd docs && yarn run dev",
-		"dev": "concurrently --kill-others-on-fail \"yarn run dev-npm\" \"yarn run dev-docs\"",
-		"build": "rollup -c",
-		"minify-cjs": "uglifyjs --compress --mangle -o dist/index.js -- dist/index.js",
-		"minify-es": "terser --compress --mangle --comments /$^/ -o dist/index.es.js -- dist/index.es.js",
-		"minify": "concurrently --kill-others-on-fail \"yarn run minify-cjs\" \"yarn run minify-es\"",
-		"postbuild": "yarn run minify",
-		"predeploy": "cd docs && yarn install && yarn run deploy",
-		"deploy": "gh-pages -t -d docs/out"
-	},
-	"peerDependencies": {
-		"prop-types": "^15.6.2",
-		"react": "^16.8.0 || ^17.0.0",
-		"react-dom": "^16.8.0 || ^17.0.0"
-	},
-	"devDependencies": {
-		"@babel/core": "7.9.6",
-		"@babel/preset-env": "7.9.6",
-		"@babel/preset-react": "7.9.4",
-		"@rollup/plugin-commonjs": "^11.1.0",
-		"@rollup/plugin-node-resolve": "^7.1.3",
-		"@rollup/plugin-typescript": "^2.1.0",
-		"@rollup/plugin-url": "^5.0.0",
-		"@types/jest": "^25.2.2",
-		"@types/prop-types": "^15.7.3",
-		"@types/react": "^16.9.35",
-		"@types/react-dom": "^16.9.8",
-		"@typescript-eslint/eslint-plugin": "^2.33.0",
-		"@typescript-eslint/parser": "^2.33.0",
-		"@svgr/rollup": "5.4.0",
-		"all-contributors-cli": "^6.14.2",
-		"babel-eslint": "10.1.0",
-		"concurrently": "5.2.0",
-		"cross-env": "7.0.2",
-		"eslint": "^7.0.0",
-		"eslint-config-airbnb": "^18.1.0",
-		"eslint-config-prettier": "^6.11.0",
-		"eslint-config-react-app": "^5.2.1",
-		"eslint-plugin-import": "^2.20.2",
-		"eslint-plugin-jest": "^23.13.1",
-		"eslint-plugin-jsx-a11y": "^6.2.3",
-		"eslint-plugin-prettier": "^3.1.3",
-		"eslint-plugin-react": "^7.20.0",
-		"eslint-plugin-react-hooks": "^4.0.2",
-		"gh-pages": "2.2.0",
-		"prettier": "^2.0.5",
-		"prettier-eslint-cli": "^5.0.0",
-		"prop-types": "^15.7.2",
-		"react": "16.12.0",
-		"react-dom": "16.12.0",
-		"react-scripts": "3.4.1",
-		"rollup": "^2.10.2",
-		"rollup-plugin-peer-deps-external": "^2.2.2",
-		"rollup-plugin-postcss": "3.1.1",
-		"terser": "4.6.13",
-		"typescript": "^3.9.2",
-		"tslib": "^2.0.0",
-		"uglify-js": "^3.9.3"
-	},
-	"main": "dist/index.js",
-	"module": "dist/index.es.js",
-	"jsnext:main": "dist/index.es.js",
-	"files": [
-		"dist",
-		"index.d.ts"
-	],
-	"homepage": "https://cogoport.github.io/cogo-toast/",
-	"bugs": {
-		"url": "https://github.com/Cogoport/cogo-toast/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Cogoport/cogo-toast.git"
-	},
-	"keywords": [
-		"react",
-		"toast",
-		"react-toast",
-		"toast-react",
-		"toastr",
-		"toast messages",
-		"messages",
-		"notifications",
-		"react notifications",
-		"component",
-		"components",
-		"react component",
-		"react components",
-		"ui"
-	],
-	"author": {
-		"name": "Cogoport",
-		"email": "developers@cogoport.io",
-		"url": "https://cogoport.io/"
-	},
-	"contributors": [
-		{
-			"name": "Cogoport",
-			"email": "developers@cogoport.io",
-			"url": "https://cogoport.io/"
-		},
-		{
-			"name": "anmolmahatpurkar",
-			"email": "anmol@cogoport.com",
-			"url": "https://github.com/anmolmahatpurkar"
-		}
-	]
+  "name": "react-toaster",
+  "description": "Beautiful, Zero Configuration, Toast Messages - Built with React forked from cogo-toast",
+  "version": "4.2.4",
+  "license": "MIT",
+  "scripts": {
+    "setup": "yarn install && cd docs && yarn install",
+    "add-contributor": "all-contributors add",
+    "dev-npm": "rollup -c -w",
+    "dev-docs": "cd docs && yarn run dev",
+    "dev": "concurrently --kill-others-on-fail \"yarn run dev-npm\" \"yarn run dev-docs\"",
+    "build": "rollup -c",
+    "minify-cjs": "uglifyjs --compress --mangle -o dist/index.js -- dist/index.js",
+    "minify-es": "terser --compress --mangle --comments /$^/ -o dist/index.es.js -- dist/index.es.js",
+    "minify": "concurrently --kill-others-on-fail \"yarn run minify-cjs\" \"yarn run minify-es\"",
+    "postbuild": "yarn run minify",
+    "predeploy": "cd docs && yarn install && yarn run deploy",
+    "deploy": "gh-pages -t -d docs/out",
+    "lint": "eslint  \"src/**/*.{js,jsx,ts,tsx}\" ",
+    "lint:format": "prettier  --check \"src/**/*.{js,jsx,json,ts,tsx}\"",
+    "lint:format:fix": "prettier  --write \"src/**/*.{js,jsx,json}\"",
+    "lint:time": "export TIMING=1 && yarn lint",
+    "lint:fix": "yarn lint --fix",
+    "lint:staged": "eslint  --fix",
+    "lint:ci": "export CI=true&&yarn lint"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.8.0 || ^17.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.18.9",
+    "@babel/preset-env": "7.18.9",
+    "@babel/preset-react": "7.18.6",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@rollup/plugin-url": "^7.0.0",
+    "@svgr/rollup": "6.3.0",
+    "@types/jest": "^28.1.6",
+    "@types/prop-types": "^15.7.5",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "all-contributors-cli": "^6.20.0",
+    "babel-eslint": "10.1.0",
+    "concurrently": "7.3.0",
+    "cross-env": "7.0.3",
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.6.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "4.0.0",
+    "prettier": "^2.7.1",
+    "prettier-eslint-cli": "^6.0.1",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-scripts": "5.0.1",
+    "rollup": "^2.77.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "4.0.2",
+    "terser": "5.14.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4",
+    "uglify-js": "^3.16.2"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "homepage": "https://cogoport.github.io/cogo-toast/",
+  "bugs": {
+    "url": "https://github.com/Cogoport/cogo-toast/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cogoport/cogo-toast.git"
+  },
+  "keywords": [
+    "react",
+    "toast",
+    "react-toast",
+    "toast-react",
+    "toastr",
+    "toast messages",
+    "messages",
+    "notifications",
+    "react notifications",
+    "component",
+    "components",
+    "react component",
+    "react components",
+    "ui"
+  ],
+  "author": {
+    "name": "Cogoport",
+    "email": "developers@cogoport.io",
+    "url": "https://cogoport.io/"
+  },
+  "contributors": [
+    {
+      "name": "Cogoport",
+      "email": "developers@cogoport.io",
+      "url": "https://cogoport.io/"
+    },
+    {
+      "name": "anmolmahatpurkar",
+      "email": "anmol@cogoport.com",
+      "url": "https://github.com/anmolmahatpurkar"
+    }
+  ]
 }
