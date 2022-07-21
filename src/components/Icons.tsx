@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface IconProps {
   [key: string]: string|number;
 }

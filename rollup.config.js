@@ -1,41 +1,51 @@
-import commonjs from '@rollup/plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
-import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
-import url from '@rollup/plugin-url';
+import commonjs from '@rollup/plugin-commonjs';
+import typescript from 'rollup-plugin-typescript2';
+import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
+import postcssPresetEnv from 'postcss-preset-env';
+import cssnano from 'cssnano';
+import url from '@rollup/plugin-url';
 
 import svgr from '@svgr/rollup';
 
-import react from 'react';
-import reactDom from 'react-dom';
-
-import pkg from './package.json';
+import packageJson from './package.json';
 
 const config = {
   input: 'src/index.tsx',
   output: [
-    { file: pkg.main, format: 'cjs', exports: 'named', sourcemap: false },
-    { file: pkg.module, format: 'es', exports: 'named', sourcemap: false },
+    {
+      file: packageJson.main,
+      format: 'cjs',
+      sourcemap: true,
+    },
+    {
+      file: packageJson.module,
+      format: 'esm',
+      sourcemap: true,
+    },
   ],
   plugins: [
     external(),
-    postcss({}),
-    url({ exclude: ['**/*.svg'] }),
-    svgr(),
     resolve(),
+    commonjs(),
     typescript({
       tsconfig: './tsconfig.json',
-      lib: ['es5', 'es6', 'dom'],
-      target: 'es5',
     }),
-    commonjs({
-      namedExports: {
-        react: Object.keys(react),
-        'react-dom': Object.keys(reactDom),
+    postcss({
+      extensions: ['.css'],
+      extract: true,
+      minimize: true,
+      plugins: [postcssPresetEnv({ stage: 0 }), cssnano()],
+    }),
+    terser({
+      output: {
+        comments: false,
       },
-      extensions: ['.js', '.ts', '.jsx', '.tsx'],
     }),
+    url({ exclude: ['**/*.svg'] }),
+    svgr(),
   ],
 };
 

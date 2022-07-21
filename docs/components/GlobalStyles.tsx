@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 
 const globalStyles = css`
 	@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
