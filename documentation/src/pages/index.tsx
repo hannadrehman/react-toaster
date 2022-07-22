@@ -8,15 +8,27 @@ import toaster from '../../../dist';
 import '../../../dist/index.css';
 
 import styles from './index.module.css';
+function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+const pos = [
+  'top-left',
+  'top-center',
+  'top-right',
+  'bottom-left',
+  'bottom-center',
+  'bottom-right',
+];
+
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
- async function showToast(type){
-    const res = await toaster[type]('pew pew pew')
-    // const { hide } = toaster.success('This is a success message.', {
-    //   onClick: () => {
-    //     hide();
-    //   },
-    // });
+  async function showToast(type) {
+    const ppp = pos[randomIntFromInterval(0, pos.length - 1)];
+    const res = await toaster[type]('pew pew pew', {
+      position: ppp,
+      hideAfter:100
+    });
   }
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -61,7 +73,7 @@ function HomepageHeader() {
               SUCCESS
             </button>
           </div>
-        <br />
+          <br />
 
           <div>
             <button

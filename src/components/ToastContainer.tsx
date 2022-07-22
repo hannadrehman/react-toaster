@@ -43,11 +43,10 @@ function ToastContainer({ toast, hiddenID }: CToastContainerProps) {
 
   const rows = ['top', 'bottom'];
   const groups = ['Left', 'Center', 'Right'];
-
   return (
     <>
       {rows.map((row) => (
-        <div key={`row_${row}`} className="ct-row">
+        <div key={`row_${row}`} className={`ct-row ct-row-${row.toLocaleLowerCase()}`}>
           {groups.map((group) => {
             const type = `${row}${group}`;
             const className = [

@@ -28,13 +28,16 @@ function Toast({
     ? 'Bottom'
     : 'Top';
 
-  const marginType = `margin${place}`;
+console.log(place)
+  
+const marginType = `margin${place}`;
 
   const className = [
     'ct-toast',
     onClick ? ' ct-cursor-pointer' : '',
     `ct-toast-${type}`,
   ].join(' ');
+  
   const borderLeft = `${bar?.size || '3px'} ${bar?.style || 'solid'} ${
     bar?.color || colors[type]
   }`;
