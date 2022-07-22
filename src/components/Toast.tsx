@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Icons from './Icons';
-import { CTOptions } from '../../index.d';
+import { CToastProps } from './Toasts';
 
 const colors = {
   success: '#6EC05F',
@@ -10,19 +10,10 @@ const colors = {
   loading: '#0088ff',
 };
 
-type CToastProps = CTOptions & {
-  id: number;
-  type: string;
-  text: string | React.ReactNode;
-  show: boolean;
-  onHide: (number, string) => void | undefined;
-  onClick: React.EventHandler<React.MouseEvent> | undefined;
-  hideAfter: number;
-};
-const Toast: React.FC<CToastProps> = ({
-  id = undefined,
+function Toast({
+  id,
   show = true,
-  onHide = undefined,
+  onHide,
   hideAfter = 3,
   heading = undefined,
   position = 'top-center',
@@ -32,10 +23,11 @@ const Toast: React.FC<CToastProps> = ({
   role = 'status',
   text,
   type,
-}) => {
+}: CToastProps) {
   const place = (position || 'top-center').includes('bottom')
     ? 'Bottom'
     : 'Top';
+
   const marginType = `margin${place}`;
 
   const className = [
@@ -49,7 +41,7 @@ const Toast: React.FC<CToastProps> = ({
 
   const CurrentIcon = Icons[type];
 
-  const [animStyles, setAnimStyles]  = useState({
+  const [animStyles, setAnimStyles] = useState({
     opacity: 0,
     [marginType]: '-15px',
   });
@@ -61,14 +53,13 @@ const Toast: React.FC<CToastProps> = ({
     ...animStyles,
   };
 
-  const handleHide = (): void => {
+  function handleHide(): void {
     setAnimStyles({ opacity: 0, [marginType]: '-15px' });
 
     setTimeout(() => {
-      if (!onHide) return;
       onHide(id, position);
     }, 300);
-  };
+  }
 
   useEffect(() => {
     const animTimeout = setTimeout(() => {
@@ -102,7 +93,7 @@ const Toast: React.FC<CToastProps> = ({
     tabIndex: 0,
     onClick: onClick,
     onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>): void => {
-      if (e.keyCode === 13) {
+      if (e.key === 'Enter') {
         if (!onClick) return;
         //eslint-disable-next-line
         // @ts-ignore
@@ -125,6 +116,6 @@ const Toast: React.FC<CToastProps> = ({
       </div>
     </div>
   );
-};
+}
 
 export default Toast;
