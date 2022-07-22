@@ -22,18 +22,22 @@ export type CTOptions = Partial<{
 	onHide: Function;
 }>;
 
+export type CTMethodOptions = CTOptions & { type: string }
+
 export type HideToastFunction = () => void;
 
-export type CTReturn = Promise<void> & { hide?: HideToastFunction };
+export type Message = string | ReactNode
 
-export type CTMethod = (message: string | ReactNode, options?: CTOptions) => CTReturn;
+export type CTReturn = Promise<void> & { hide?: HideToastFunction } | void;
+
+export type CTMethod = (message: Message, options?: CTOptions) => CTReturn;
 
 export type CTMainMethod = (
-	message: string | ReactNode,
-	options?: CTOptions & { type: string },
+	message: Message,
+	options?: CTMethodOptions,
 ) => CTReturn;
 
-export type CToast = CTMainMethod & {
+export type CToast = {
 	success: CTMethod;
 	warn: CTMethod;
 	info: CTMethod;

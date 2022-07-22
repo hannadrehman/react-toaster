@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-
 import Toast from './Toast';
+import { CToastItem, CToastContainerProps } from './Toasts';
 
-const camelCase = (str: string): string =>
-  str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+function camelCase(str: string): string {
+  return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+}
 
 const defaultToasts = {
   topLeft: [],
@@ -14,28 +15,8 @@ const defaultToasts = {
   bottomRight: [],
 };
 
-type CToastItem = {
-  id: number;
-  text: string;
-  type: string;
-  hideAfter: number;
-  onClick: React.MouseEventHandler;
-  onHide: () => void;
-};
-
-type CToastContainerProps = Partial<{
-  toast: {
-    position?: string;
-  };
-  hiddenID: number;
-}>;
-
-const ToastContainer: React.FC<CToastContainerProps> = ({
-  toast,
-  hiddenID,
-}) => {
+function ToastContainer({ toast, hiddenID }: CToastContainerProps) {
   const [allToasts, setToasts] = useState(defaultToasts);
-
   useEffect(() => {
     if (toast) {
       setToasts((prevToasts) => {
@@ -95,6 +76,6 @@ const ToastContainer: React.FC<CToastContainerProps> = ({
       ))}
     </>
   );
-};
+}
 
 export default ToastContainer;
