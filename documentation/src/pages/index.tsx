@@ -27,7 +27,7 @@ function HomepageHeader() {
     const ppp = pos[randomIntFromInterval(0, pos.length - 1)];
     const res = await toaster[type]('pew pew pew', {
       position: ppp,
-      hideAfter:100
+      hideAfter: 100,
     });
   }
   return (
@@ -40,7 +40,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            Docusaurus Tutorial - 5min ⏱️
+            Tutorial - 5min ⏱️
           </Link>
         </div>
         <br />
