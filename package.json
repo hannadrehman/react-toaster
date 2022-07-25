@@ -1,13 +1,13 @@
 {
-  "name": "react-toaster",
+  "name": "tostify-react",
   "description": "Beautiful, Zero Configuration, Toast Messages - Built with React forked from cogo-toast",
-  "version": "4.2.4",
+  "version": "4.3.0",
   "license": "MIT",
   "scripts": {
     "setup": "yarn install  --frozen-lockfile && cd documentation && yarn install  --frozen-lockfile",
     "add-contributor": "all-contributors add",
     "dev": "yarn build -w",
-    "dev:docs": "cd ./documentation && yarn start",
+    "dev:docs": "rm -rf ./docs && cd ./documentation && yarn start",
     "build": "rollup -c",
     "build:docs": "cd ./documentation && yarn build",
     "lint": "eslint  \"src/**/*.{js,jsx,ts,tsx}\" ",
@@ -63,13 +63,13 @@
     "dist",
     "index.d.ts"
   ],
-  "homepage": "https://cogoport.github.io/cogo-toast/",
+  "homepage": "https://hannadrehman.github.io/tostify-react/",
   "bugs": {
-    "url": "https://github.com/Cogoport/cogo-toast/issues"
+    "url": "https://github.com/hannadrehman/tostify-react/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cogoport/cogo-toast.git"
+    "url": "https://github.com/hannadrehman/tostify-react.git"
   },
   "keywords": [
     "react",
@@ -102,6 +102,11 @@
       "name": "anmolmahatpurkar",
       "email": "anmol@cogoport.com",
       "url": "https://github.com/anmolmahatpurkar"
+    },
+    {
+      "name": "hannadrehman",
+      "email": "hannad63@gmail.com",
+      "url": "https://github.com/hannadrehman"
     }
   ],
   "dependencies": {

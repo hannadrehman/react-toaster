@@ -18,7 +18,7 @@ yarn - v1
 > pull requests from branches on your fork. To do this, run:
 >
 > ```
-> git remote add upstream https://github.com/Cogoport/cogo-toast.git
+> git remote add upstream https://github.com/hannadrehman/tostify-react
 > git fetch upstream
 > git branch --set-upstream-to=upstream/master master
 > ```
@@ -52,4 +52,4 @@ Please checkout the [the open issues][issues]
 Also, please watch the repo and respond to questions/bug reports/feature
 requests! Thanks!
 
-[issues]: https://github.com/Cogoport/cogo-toast/issues
+[issues]: https://github.com/hannadrehman/tostify-react/issues
