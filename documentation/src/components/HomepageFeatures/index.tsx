@@ -17,7 +17,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Light Weight',
     Svg: require('@site/static/img/light_weight.svg').default,
-    description: <>~ 4K Gzipped (All Inclusive of Icons, Styles, & Code)</>,
+    description: <>~ 3K Gzipped (All Inclusive of Icons, Styles, & Code)</>,
   },
   {
     title: 'Focus on What Matters',
