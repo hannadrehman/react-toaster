@@ -7,7 +7,7 @@
     "setup": "yarn install  --frozen-lockfile && cd documentation && yarn install  --frozen-lockfile",
     "add-contributor": "all-contributors add",
     "dev": "yarn build -w",
-    "dev:docs": "cd ./documentation && yarn start",
+    "dev:docs": "rm -rf ./docs && cd ./documentation && yarn start",
     "build": "rollup -c",
     "build:docs": "cd ./documentation && yarn build",
     "lint": "eslint  \"src/**/*.{js,jsx,ts,tsx}\" ",
