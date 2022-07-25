@@ -63,13 +63,13 @@
     "dist",
     "index.d.ts"
   ],
-  "homepage": "https://cogoport.github.io/cogo-toast/",
+  "homepage": "https://hannadrehman.github.io/react-toaster/",
   "bugs": {
-    "url": "https://github.com/Cogoport/cogo-toast/issues"
+    "url": "https://github.com/hannadrehman/react-toaster/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cogoport/cogo-toast.git"
+    "url": "https://github.com/hannadrehman/react-toaster.git"
   },
   "keywords": [
     "react",
@@ -102,6 +102,11 @@
       "name": "anmolmahatpurkar",
       "email": "anmol@cogoport.com",
       "url": "https://github.com/anmolmahatpurkar"
+    },
+    {
+      "name": "hannadrehman",
+      "email": "hannad63@gmail.com",
+      "url": "https://github.com/hannadrehman"
     }
   ],
   "dependencies": {
