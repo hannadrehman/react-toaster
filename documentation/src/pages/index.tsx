@@ -27,7 +27,7 @@ function HomepageHeader() {
     const ppp = pos[randomIntFromInterval(0, pos.length - 1)];
     const res = await toaster[type]('pew pew pew', {
       position: ppp,
-      hideAfter:100
+      hideAfter:10,
     });
   }
   return (

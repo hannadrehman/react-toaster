@@ -1,6 +1,4 @@
-interface IconProps {
-  [key: string]: string|number;
-}
+import { IconProps, Icons } from '../../index';
 
 const success: React.FC<IconProps> = (props) => (
   <svg viewBox="0 0 426.667 426.667" width={18} height={18} {...props}>
@@ -42,7 +40,7 @@ const error: React.FC<IconProps> = (props) => (
   </svg>
 );
 
-export default {
+export const icons: Icons = {
   success,
   warn,
   loading,
