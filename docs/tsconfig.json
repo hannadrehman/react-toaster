@@ -1,13 +1,7 @@
 {
-  "extends": "../tsconfig.json",
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
-    "skipLibCheck": true,
-    "jsx": "preserve",
-    "incremental": true
+    "baseUrl": "."
   }
 }
