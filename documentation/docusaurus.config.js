@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'React Toaster',
   tagline: 'Beautiful, Zero-Configuration, Toast Messages for React',
-  url: 'https://hannadrehman.github.io/',
+  url: 'https://hannadrehman.github.io',
   baseUrl: '/react-toaster/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
