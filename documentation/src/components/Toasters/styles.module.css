@@ -1,0 +1,18 @@
+.toastersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 1rem 0 4rem 0;
+}
+
+.toasterOptionsTitle {
+  margin-bottom: 2rem;
+}

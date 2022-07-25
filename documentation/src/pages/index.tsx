@@ -4,32 +4,12 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import toaster from '../../../dist';
-import '../../../dist/index.css';
 
 import styles from './index.module.css';
-function randomIntFromInterval(min, max) {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-const pos = [
-  'top-left',
-  'top-center',
-  'top-right',
-  'bottom-left',
-  'bottom-center',
-  'bottom-right',
-];
+import Toasters from '../components/Toasters';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  async function showToast(type) {
-    const ppp = pos[randomIntFromInterval(0, pos.length - 1)];
-    const res = await toaster[type]('pew pew pew', {
-      position: ppp,
-      hideAfter:10,
-    });
-  }
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -40,60 +20,10 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            Docusaurus Tutorial - 5min ⏱️
+            Tutorial - 5min ⏱️
           </Link>
         </div>
         <br />
-        <div>
-          <div>
-            <button
-              className="button button--secondary button--lg"
-              onClick={() => showToast('info')}
-            >
-              INFO
-            </button>
-          </div>
-          <br />
-
-          <div>
-            <button
-              className="button button--secondary button--lg"
-              onClick={() => showToast('warn')}
-            >
-              WARN
-            </button>
-          </div>
-          <br />
-
-          <div>
-            <button
-              className="button button--secondary button--lg"
-              onClick={() => showToast('success')}
-            >
-              SUCCESS
-            </button>
-          </div>
-          <br />
-
-          <div>
-            <button
-              className="button button--secondary button--lg"
-              onClick={() => showToast('error')}
-            >
-              ERROR
-            </button>
-          </div>
-          <br />
-
-          <div>
-            <button
-              className="button button--secondary button--lg"
-              onClick={() => showToast('loading')}
-            >
-              LOADING
-            </button>
-          </div>
-        </div>
       </div>
     </header>
   );
@@ -108,6 +38,7 @@ export default function Home(): JSX.Element {
     >
       <HomepageHeader />
       <main>
+        <Toasters />
         <HomepageFeatures />
       </main>
     </Layout>
