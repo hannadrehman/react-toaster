@@ -61,10 +61,10 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'React Toaster',
+        title: 'Tostify React',
         logo: {
-          alt: 'React Toaster',
-          src: 'img/tostify-react.png',
+          alt: 'Tostify React',
+          src: '/img/tostify-react.png',
         },
         items: [
           {
@@ -102,7 +102,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} React Toaster, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Tostify React, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
