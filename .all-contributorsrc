@@ -65,6 +65,19 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "hedaukartik",
+      "name": "Kartik Hedau",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35377972?v=4",
+      "profile": "https://www.kartikhedau.in/",
+      "contributions": [
+        "code",
+        "content",
+        "design",
+        "doc",
+        "example"
+      ]
     }
   ],
   "contributorsPerLine": 7
