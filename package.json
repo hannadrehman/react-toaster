@@ -1,5 +1,5 @@
 {
-  "name": "tostify-react",
+  "name": "toastify-react",
   "description": "Beautiful, Zero Configuration, Toast Messages - Built with React forked from cogo-toast",
   "version": "4.3.0",
   "license": "MIT",
@@ -63,13 +63,13 @@
     "dist",
     "index.d.ts"
   ],
-  "homepage": "https://hannadrehman.github.io/tostify-react/",
+  "homepage": "https://hannadrehman.github.io/toastify-react/",
   "bugs": {
-    "url": "https://github.com/hannadrehman/tostify-react/issues"
+    "url": "https://github.com/hannadrehman/toastify-react/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hannadrehman/tostify-react.git"
+    "url": "https://github.com/hannadrehman/toastify-react.git"
   },
   "keywords": [
     "react",

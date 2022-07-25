@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Heading
 
-tostify-react helps you classify toasters with heading.
+toastify-react helps you classify toasters with heading.
 
 import toaster from '../../../dist';
 

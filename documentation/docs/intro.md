@@ -4,20 +4,20 @@ sidebar_position: 1
 
 # Intro
 
-Let's discover **tostify-react in less than 5 minutes**.
+Let's discover **toastify-react in less than 5 minutes**.
 
 ## Getting Started
 
 ## Install
 
 ```shell
-npm install tostify-react
+npm install toastify-react
 ```
 
 ## Usage
 
 ```jsx
-import toaster from 'tostify-react';
+import toaster from 'toastify-react';
 
 function Profile() {
   return (

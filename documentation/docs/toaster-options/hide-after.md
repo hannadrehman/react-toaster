@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Hide After
 
-tostify-react hides after 3 secs by default. We can change it using `hideAfter`
+toastify-react hides after 3 secs by default. We can change it using `hideAfter`
 
 import toaster from '../../../dist';
 
