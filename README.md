@@ -1,39 +1,28 @@
-<p align="center"><a href="https://cogoport.github.io/cogo-toast/" target="_blank"><img src="https://cogoport.github.io/cogo-toast/meta/android-chrome-96x96.png" alt="cogo-toast" title="cogo-toast" width="120"></a></p>
-<h1 align="center">Cogo Toast</h1>
+<p align="center"><a href="https://hannadrehman.github.io/toastify-react/" target="_blank"><img src="https://hannadrehman.github.io/toastify-react/img/react-toaster.png" alt="toastify-react" title="toastify-react" width="120"></a></p>
+<h1 align="center">Toastify React</h1>
 <p align="center" style="font-size: 1.2rem;">Beautiful, Zero Configuration, Toast Messages for React ~3kb gzip (with styles and icons)</p>
-<p align="center"><a href="https://cogoport.github.io/cogo-toast/">https://cogoport.github.io/cogo-toast/</a></p>
+<p align="center"><a href="https://cogoport.github.io/cogo-toast/">https://hannadrehman.github.io/toastify-react/</a></p>
 
-[![Dependencies](https://img.shields.io/david/Cogoport/cogo-toast.svg)](https://david-dm.org/Cogoport/cogo-toast.svg)
-[![npm package](https://img.shields.io/npm/v/cogo-toast/latest.svg)](https://www.npmjs.com/package/cogo-toast)
-[![Small size](https://img.badgesize.io/https://unpkg.com/cogo-toast/dist/index.js?compression=gzip)](https://unpkg.com/cogo-toast/dist/index.js)
-[![npm downloads](https://img.shields.io/npm/dm/cogo-toast.svg)](https://www.npmjs.com/package/cogo-toast)
+[![npm package](https://img.shields.io/npm/v/toastify-react/latest.svg)](https://www.npmjs.com/package/toastify-react)
+[![Small size](https://img.badgesize.io/https://unpkg.com/cogo-toast/dist/index.js?compression=gzip)](https://unpkg.com/toastify-react/dist/index.js)
+![npm](https://img.shields.io/npm/dm/toastify-react)
 ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
-[![License](https://img.shields.io/npm/l/@xstyled/styled-components.svg)](https://github.com/Cogoport/cogo-toast/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/hannadrehman/toastify-react)](https://github.com/hannadrehman/toastify-react/blob/master/LICENSE)
 
 <p align="center">
-<a href="https://cogoport.github.io/cogo-toast/" target="_blank"><img src="docs/public/images/preview.gif" alt="cogo-toast-preview" title="cogo-toast-preview"></a>
+<a href="https://hannadrehman.github.io/toastify-react/" target="_blank">Toastify React</a>
 </p>
 
 ### Install via NPM:
 
 ```bash
-npm install --save cogo-toast
+npm install --save toastify-react
 ```
 
 ### Install via Yarn:
 
 ```bash
-yarn add cogo-toast
-```
-
-#### Note:
-
-The latest version `^3.0.0` makes the use of React Hooks internally.
-
-To use this package in projects that don't support hooks, use `v2.0.1` instead.
-
-```bash
-yarn add cogo-toast@2.0.1
+yarn add toastify-react
 ```
 
 ## Usage
@@ -41,9 +30,9 @@ yarn add cogo-toast@2.0.1
 Its Plug and Play. No configuration required. Just import and you are good to go.
 
 ```javascript
-import cogoToast from 'toastify-react';
+import toaster from 'toastify-react';
 
-cogoToast.success('This is a success message!');
+toaster.success('This is a success message!');
 ```
 
 ### 5 Built in Types
@@ -51,23 +40,23 @@ cogoToast.success('This is a success message!');
 There are 5 built-in types to handle the most common cases in any application.
 
 ```javascript
-cogoToast.success('This is a success message');
+toaster.success('This is a success message');
 
-cogoToast.info('This is a info message');
+toaster.info('This is a info message');
 
-cogoToast.loading('This is a loading message');
+toaster.loading('This is a loading message');
 
-cogoToast.warn('This is a warn message');
+toaster.warn('This is a warn message');
 
-cogoToast.error('This is a error message');
+toaster.error('This is a error message');
 ```
 
 ### Use JSX
 
-**cogoToast** is built using React. Which means any valid jsx can be used as the message in cogoToast
+**toastify-react** is built using React. Which means any valid jsx can be used as the message in toaster
 
 ```javascript
-cogoToast.info(
+toaster.info(
   <div>
     <b>Awesome!</b>
     <div>Isn't it?</div>
@@ -82,15 +71,15 @@ Returns a promise which resolves when the toast is about to hide.
 This can be useful to do some action when the toast has completed showing.
 
 ```javascript
-cogoToast.loading('Loading your data...').then(() => {
-  cogoToast.success('Data Successfully Loaded');
+toaster.loading('Loading your data...').then(() => {
+  toaster.success('Data Successfully Loaded');
 });
 ```
 
 ### Hide on Click
 
 ```javascript
-const { hide } = cogoToast.success('This is a success message.', {
+const { hide } = toaster.success('This is a success message.', {
   onClick: () => {
     hide();
   },
@@ -102,23 +91,23 @@ const { hide } = cogoToast.success('This is a success message.', {
 The second parameter to the function is an options object that can be passed in for customization.
 
 ```javascript
-cogoToast.info('This is an info message', options);
+toaster.info('This is an info message', options);
 ```
 
 #### All Available Options
 
 Here's a list of all the available options, to customize the toast to your needs.
 
-|    Options    |                                               Type                                               |                          Default                           |
-| :-----------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------: |
-|   hideAfter   |                                        Number in Seconds                                         | `3` <br />(Can be `0` to disable auto-hiding of the toast) |
-|   position    | `'top-left', 'top-center', 'top-right',` <br /> `'bottom-left', 'bottom-center', 'bottom-right'` |                       `'top-center'`                       |
-|    heading    |                                              String                                              |                            `''`                            |
-|  renderIcon   |                                       Function<ReactNode>                                        |                   Icon Based on the Type                   |
-|      bar      |           Object <br /> `{ size: '2px', style: 'solid/dashed/dotted', color: '#hex' }`           |                     Based on the Type                      |
-| onClick() |                                             Function                                             |                           `null`                           |
-| role |                                             aria-role                                             |                           `status`                           |
-| toastContainerID |                   The dom element in which the toast container is added                                         |                           `ct-container`                           |
+|     Options      |                                               Type                                               |                          Default                           |
+| :--------------: | :----------------------------------------------------------------------------------------------: | :--------------------------------------------------------: |
+|    hideAfter     |                                        Number in Seconds                                         | `3` <br />(Can be `0` to disable auto-hiding of the toast) |
+|     position     | `'top-left', 'top-center', 'top-right',` <br /> `'bottom-left', 'bottom-center', 'bottom-right'` |                       `'top-center'`                       |
+|     heading      |                                              String                                              |                            `''`                            |
+|    renderIcon    |                                       Function<ReactNode>                                        |                   Icon Based on the Type                   |
+|       bar        |           Object <br /> `{ size: '2px', style: 'solid/dashed/dotted', color: '#hex' }`           |                     Based on the Type                      |
+|    onClick()     |                                             Function                                             |                           `null`                           |
+|       role       |                                            aria-role                                             |                          `status`                          |
+| toastContainerID |                      The dom element in which the toast container is added                       |                       `ct-container`                       |
 
 ### Custom Styling
 
@@ -167,8 +156,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
+# How to run locally
 
-# How to run locally 
 ```
 yarn setup
 yarn dev // runs rullup in watch mode
