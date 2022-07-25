@@ -37,14 +37,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/hannadrehman/react-toaster/tree/master/documentation/docs',
+            'https://github.com/hannadrehman/react-toaster/tree/master/documentation',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/hannadrehman/react-toaster/tree/master/documentation/blog',
+            'https://github.com/hannadrehman/react-toaster/tree/master/documentation',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
