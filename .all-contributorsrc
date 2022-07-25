@@ -46,7 +46,7 @@
       "profile": "http://www.apathak.com",
       "contributions": [
         "doc"
-       ]
+      ]
     },
     {
       "login": "nataly87s",
@@ -55,8 +55,31 @@
       "profile": "https://github.com/nataly87s",
       "contributions": [
         "code"
-       ]
+      ]
     },
+    {
+      "login": "hannadrehman",
+      "name": "hannad rehman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23405869?v=4",
+      "profile": "https://hannadrehman.com/",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    },
+    {
+      "login": "hedaukartik",
+      "name": "Kartik Hedau",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35377972?v=4",
+      "profile": "https://www.kartikhedau.in/",
+      "contributions": [
+        "code",
+        "content",
+        "design",
+        "doc",
+        "example"
+      ]
+    }
   ],
   "contributorsPerLine": 7
 }
