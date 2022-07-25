@@ -1,4 +1,4 @@
-import { CTOptions } from '../../index.d';
+import { CTOptions,Theme,Icons } from '../../index.d';
 
 export type CToastItem = {
   id: number;
@@ -14,6 +14,8 @@ export type CToastContainerProps = Partial<{
     position?: string;
   };
   hiddenID: number;
+  theme: Theme;
+  icons: Icons
 }>;
 
 export type CToastProps = CTOptions & {

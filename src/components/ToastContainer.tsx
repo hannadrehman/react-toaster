@@ -15,7 +15,7 @@ const defaultToasts = {
   bottomRight: [],
 };
 
-function ToastContainer({ toast, hiddenID }: CToastContainerProps) {
+function ToastContainer({ toast, hiddenID, theme, icons }: CToastContainerProps) {
   const [allToasts, setToasts] = useState(defaultToasts);
   useEffect(() => {
     if (toast) {
@@ -66,6 +66,8 @@ function ToastContainer({ toast, hiddenID }: CToastContainerProps) {
                     hideAfter={item.hideAfter}
                     show={hiddenID !== item.id}
                     onHide={handleRemove(item.onHide)}
+                    theme={theme}
+                    icons={icons}
                   />
                 ))}
               </div>

@@ -1,14 +1,7 @@
 import { useState, useEffect } from 'react';
-import Icons from './Icons';
 import { CToastProps } from './Toasts';
-
-const colors = {
-  success: '#6EC05F',
-  info: '#1271EC',
-  warn: '#FED953',
-  error: '#D60A2E',
-  loading: '#0088ff',
-};
+import { defaultTheme } from './theme';
+import { icons as defaultIcons } from './Icons';
 
 function Toast({
   id,
@@ -23,27 +16,26 @@ function Toast({
   role = 'status',
   text,
   type,
+  theme,
+  icons,
 }: CToastProps) {
   const place = (position || 'top-center').includes('bottom')
     ? 'Bottom'
     : 'Top';
 
-console.log(place)
-  
-const marginType = `margin${place}`;
+  const marginType = `margin${place}`;
 
   const className = [
     'ct-toast',
     onClick ? ' ct-cursor-pointer' : '',
     `ct-toast-${type}`,
   ].join(' ');
-  
+
   const borderLeft = `${bar?.size || '3px'} ${bar?.style || 'solid'} ${
-    bar?.color || colors[type]
+    bar?.color || theme[type] || defaultTheme[type]
   }`;
 
-  const CurrentIcon = Icons[type];
-
+  const CurrentIcon = icons?.[type] || defaultIcons[type];
   const [animStyles, setAnimStyles] = useState({
     opacity: 0,
     [marginType]: '-15px',
@@ -105,6 +97,11 @@ const marginType = `margin${place}`;
     },
   };
 
+  function getIcon() {
+    if (renderIcon) return renderIcon();
+    if (typeof CurrentIcon === 'function') return <CurrentIcon />;
+    return CurrentIcon;
+  }
   return (
     <div
       className={className}
@@ -112,7 +109,7 @@ const marginType = `margin${place}`;
       style={style}
       {...(onClick ? clickProps : {})}
     >
-      {renderIcon ? renderIcon() : <CurrentIcon />}
+      {getIcon()}
       <div className={heading ? 'ct-text-group-heading' : 'ct-text-group'}>
         {heading && <h4 className="ct-heading">{heading}</h4>}
         <div className="ct-text">{text}</div>
