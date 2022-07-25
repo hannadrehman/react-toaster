@@ -13,7 +13,6 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'hannadrehman', // Usually your GitHub org/user name.
@@ -61,10 +60,10 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'React Toaster',
+        title: 'Tostify React',
         logo: {
-          alt: 'React Toaster',
-          src: 'img/tostify-react.png',
+          alt: 'Tostify React',
+          src: '/tostify-react/img/react-toaster.png',
         },
         items: [
           {
@@ -102,7 +101,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} React Toaster, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Tostify React, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
