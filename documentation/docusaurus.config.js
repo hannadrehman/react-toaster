@@ -52,7 +52,6 @@ const config = {
       }),
     ],
   ],
-  themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -65,7 +64,7 @@ const config = {
         title: 'React Toaster',
         logo: {
           alt: 'React Toaster',
-          src: 'img/logo.svg',
+          src: 'img/react-toaster.png',
         },
         items: [
           {
