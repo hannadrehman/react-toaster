@@ -13,7 +13,6 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'hannadrehman', // Usually your GitHub org/user name.
@@ -64,7 +63,7 @@ const config = {
         title: 'Tostify React',
         logo: {
           alt: 'Tostify React',
-          src: '/img/tostify-react.png',
+          src: '/tostify-react/img/react-toaster.png',
         },
         items: [
           {
