@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Always open
 
-React-toaster can also be kept always open.
+tostify-react can also be kept always open.
 
 import toaster from '../../../dist';
 

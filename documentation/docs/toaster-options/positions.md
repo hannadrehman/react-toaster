@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Positions
 
-React-toaster is supports 6 types of toaster positions.
+tostify-react is supports 6 types of toaster positions.
 
 import toaster from '../../../dist';
 

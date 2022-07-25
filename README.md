@@ -41,7 +41,7 @@ yarn add cogo-toast@2.0.1
 Its Plug and Play. No configuration required. Just import and you are good to go.
 
 ```javascript
-import cogoToast from 'react-toaster';
+import cogoToast from 'tostify-react';
 
 cogoToast.success('This is a success message!');
 ```

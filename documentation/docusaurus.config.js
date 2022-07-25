@@ -6,10 +6,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'React Toaster',
+  title: 'Tostify React',
   tagline: 'Beautiful, Zero-Configuration, Toast Messages for React',
   url: 'https://hannadrehman.github.io',
-  baseUrl: '/react-toaster/',
+  baseUrl: '/tostify-react/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'hannadrehman', // Usually your GitHub org/user name.
-  projectName: 'react-toaster', // Usually your repo name.
+  projectName: 'tostify-react', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -37,14 +37,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/hannadrehman/react-toaster/tree/master/documentation',
+            'https://github.com/hannadrehman/tostify-react/tree/master/documentation',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/hannadrehman/react-toaster/tree/master/documentation',
+            'https://github.com/hannadrehman/tostify-react/tree/master/documentation',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -64,7 +64,7 @@ const config = {
         title: 'React Toaster',
         logo: {
           alt: 'React Toaster',
-          src: 'img/react-toaster.png',
+          src: 'img/tostify-react.png',
         },
         items: [
           {
@@ -74,7 +74,7 @@ const config = {
             label: 'Tutorial',
           },
           {
-            href: 'https://github.com/hannadrehman/react-toaster',
+            href: 'https://github.com/hannadrehman/tostify-react',
             label: 'GitHub',
             position: 'right',
           },
@@ -97,7 +97,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/hannadrehman/react-toaster',
+                href: 'https://github.com/hannadrehman/tostify-react',
               },
             ],
           },
