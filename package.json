@@ -1,7 +1,7 @@
 {
   "name": "toastify-react",
   "description": "Beautiful, Zero Configuration, Toast Messages - Built with React forked from cogo-toast",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "license": "MIT",
   "scripts": {
     "setup": "yarn install  --frozen-lockfile && cd documentation && yarn install  --frozen-lockfile",
