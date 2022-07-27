@@ -1,7 +1,7 @@
 <p align="center"><a href="https://hannadrehman.github.io/toastify-react/" target="_blank"><img src="https://hannadrehman.github.io/toastify-react/img/react-toaster.png" alt="toastify-react" title="toastify-react" width="120"></a></p>
 <h1 align="center">Toastify React</h1>
 <p align="center" style="font-size: 1.2rem;">Beautiful, Zero Configuration, Toast Messages for React ~3kb gzip (with styles and icons)</p>
-<p align="center"><a href="https://cogoport.github.io/cogo-toast/">https://hannadrehman.github.io/toastify-react/</a></p>
+<p align="center"><a href="https://hannadrehman.github.io/toastify-react/">Demo</a></p>
 
 [![npm package](https://img.shields.io/npm/v/toastify-react/latest.svg)](https://www.npmjs.com/package/toastify-react)
 [![Small size](https://img.badgesize.io/https://unpkg.com/cogo-toast/dist/index.js?compression=gzip)](https://unpkg.com/toastify-react/dist/index.js)
